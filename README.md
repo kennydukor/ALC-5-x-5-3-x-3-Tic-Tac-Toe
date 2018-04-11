@@ -13,3 +13,5 @@ This repository presents my final project (Tic Tac Toe) for certification by And
 ![Choose Opponent](https://github.com/kennydukor/ALC-5-x-5-3-x-3-Tic-Tac-Toe/blob/master/MockUps/Choose%20Opp.png)
 ![Three by Three](https://github.com/kennydukor/ALC-5-x-5-3-x-3-Tic-Tac-Toe/blob/master/MockUps/Three%20by%20Three%20Bot.png)
 ![Five by Five](https://github.com/kennydukor/ALC-5-x-5-3-x-3-Tic-Tac-Toe/blob/master/MockUps/Five%20by%20Five%20Bot.png)
+![Three by Three](https://github.com/kennydukor/ALC-5-x-5-3-x-3-Tic-Tac-Toe/blob/master/MockUps/Three%20by%20Three%20Human.png)
+![Five by Five](https://github.com/kennydukor/ALC-5-x-5-3-x-3-Tic-Tac-Toe/blob/master/MockUps/Five%20by%20Five%20Human.png)
