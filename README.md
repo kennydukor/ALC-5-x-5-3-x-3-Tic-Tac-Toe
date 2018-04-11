@@ -6,7 +6,7 @@ This repository presents my final project (Tic Tac Toe) for certification by And
 
 2. [APK File](https://github.com/kennydukor/ALC-5-x-5-3-x-3-Tic-Tac-Toe/blob/master/APK%20File/app-debug.apk)
 
-3. [XML and Java code (https://github.com/kennydukor/ALC-5-x-5-3-x-3-Tic-Tac-Toe/tree/master/XML%20and%20Java%20Codes/TicTacToe2)
+3. [XML and Java code](https://github.com/kennydukor/ALC-5-x-5-3-x-3-Tic-Tac-Toe/tree/master/XML%20and%20Java%20Codes/TicTacToe2)
 
 
 ![Landing Page](https://github.com/kennydukor/ALC-5-x-5-3-x-3-Tic-Tac-Toe/blob/master/MockUps/Landing%20Page.png)
