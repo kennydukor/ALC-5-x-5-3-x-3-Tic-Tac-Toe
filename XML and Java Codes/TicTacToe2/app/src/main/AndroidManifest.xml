@@ -19,13 +19,13 @@
         <activity android:name=".threeByThreeCom" />
         <activity android:name=".fiveByFiveCom" />
         <activity android:name=".threeByThreeHum" />
-        <activity android:name=".fiveByFiveHum" />
         <activity android:name=".activityTwo" />
         <activity android:name=".activityThree" />
         <activity android:name=".chooseLetter3" />
         <activity android:name=".chooseLetter5" />
         <activity android:name=".ThreeByThreeComX" />
-        <activity android:name=".fiveByFiveComX"></activity>
+        <activity android:name=".fiveByFiveComX" />
+        <activity android:name=".fiveByFiveHuman"></activity>
     </application>
 
 </manifest>

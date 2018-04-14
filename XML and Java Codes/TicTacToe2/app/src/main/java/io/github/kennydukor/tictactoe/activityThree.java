@@ -24,7 +24,7 @@ public class activityThree extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activityThree.this, fiveByFiveHum.class);
+                Intent intent = new Intent(activityThree.this, fiveByFiveHuman.class);
                 startActivity(intent);
             }
         });

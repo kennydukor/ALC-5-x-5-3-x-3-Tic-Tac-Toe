@@ -115,7 +115,6 @@ public class fiveByFiveCom extends AppCompatActivity {
                 || (c[3][1] == 0 && c[3][2] == 0 && c[3][3] == 0 && c[3][4] == 0 && c[3][5] == 0)
                 || (c[4][1] == 0 && c[4][2] == 0 && c[4][3] == 0 && c[4][4] == 0 && c[4][5] == 0)
                 || (c[5][1] == 0 && c[5][2] == 0 && c[5][3] == 0 && c[5][4] == 0 && c[5][5] == 0)) {
-            //textView.setText("Game over. You win!");
             youWin();
             gameOver = true;
         } else if ((c[1][1] == 1 && c[2][2] == 1 && c[3][3] == 1 && c[4][4] == 1 && c[5][5] == 1)
@@ -176,7 +175,7 @@ public class fiveByFiveCom extends AppCompatActivity {
     //Update the points on the scoreboard
     private void updatePointsText(){
         youTextView.setText("You: " + youPoint);
-        botTextView.setText("Bot: " + botPoint);
+        botTextView.setText("Com: " + botPoint);
     }
 
     //Reset all values in the game

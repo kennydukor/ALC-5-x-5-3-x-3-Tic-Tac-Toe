@@ -16,13 +16,14 @@ public class chooseLetter3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_letter3);
 
-        chooseX = (Button) findViewById(R.id.playX3);
-        chooseO = (Button) findViewById(R.id.playO3);
+        chooseX = (Button) findViewById(R.id.play_X3);
+        chooseO = (Button) findViewById(R.id.play_O3);
 
         chooseX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(chooseLetter3.this, ThreeByThreeComX.class);
+                startActivity(intent);
             }
         });
 
@@ -30,6 +31,7 @@ public class chooseLetter3 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(chooseLetter3.this, threeByThreeCom.class);
+                startActivity(intent);
             }
         });
 
