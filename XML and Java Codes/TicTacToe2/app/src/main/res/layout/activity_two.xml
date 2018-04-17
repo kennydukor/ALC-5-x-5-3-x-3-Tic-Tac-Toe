@@ -37,7 +37,7 @@
             android:text="HUMAN"
             android:textSize="25sp"
             android:layout_margin="10dp"
-            android:background="#72B640"/>
+            android:background="@drawable/buttons"/>
 
         <Button
             android:layout_width="0dp"
@@ -47,7 +47,7 @@
             android:text="COM"
             android:textSize="25sp"
             android:layout_margin="10dp"
-            android:background="#72B640"/>
+            android:background="@drawable/buttons"/>
     </LinearLayout>
 
 </LinearLayout>

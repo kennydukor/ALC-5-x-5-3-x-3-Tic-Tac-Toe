@@ -1,6 +1,8 @@
 package io.github.kennydukor.tictactoe;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,6 +40,7 @@ public class threeByThreeCom extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(threeByThreeCom.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
@@ -92,17 +95,27 @@ public class threeByThreeCom extends AppCompatActivity {
                 || (c[1][1] == 0 && c[1][2] == 0 && c[1][3] == 0) || (c[2][1] == 0 && c[2][2] == 0 && c[2][3] == 0)
                 || (c[3][1] == 0 && c[3][2] == 0 && c[3][3] == 0) || (c[1][1] == 0 && c[2][1] == 0 && c[3][1] == 0)) {
             youWin();
+//            for(int i = 1; i < 3; i++){
+//                for(int j = 1; j < 3; j++){
+//                    buttons[i][j].setTextColor(Color.WHITE);
+//                }
+//            }
             gameOver = true;
         } else if ((c[1][1] == 1 && c[2][2] == 1 && c[3][3] == 1) || (c[1][3] == 1 && c[2][2] == 1 && c[3][1] == 1) || (c[1][2] == 1 && c[2][2] == 1 && c[3][2] == 1)
                 || (c[1][3] == 1 && c[2][3] == 1 && c[3][3] == 1) || (c[1][1] == 1 && c[1][2] == 1 && c[1][3] == 1) || (c[2][1] == 1 && c[2][2] == 1 && c[2][3] == 1)
                 || (c[3][1] == 1 && c[3][2] == 1 && c[3][3] == 1)
                 || (c[1][1] == 1 && c[2][1] == 1 && c[3][1] == 1)) {
             botWin();
+//            for(int i = 1; i < 3; i++){
+//                for(int j = 1; j < 3; j++){
+//                    buttons[i][j].setTextColor(Color.WHITE);
+//                }
+//            }
             gameOver = true;
         } else {
             boolean empty = false;
-            for (i = 1; i <= 3; i++) {
-                for (j = 1; j <= 3; j++) {
+            for (i = 1; i < 3; i++) {
+                for (j = 1; j < 3; j++) {
                     if (c[i][j] == 2) {
                         empty = true;
                         break;
@@ -143,8 +156,8 @@ public class threeByThreeCom extends AppCompatActivity {
 
     //Update the points on the scoreboard
     private void updatePointsText() {
-        youTextView.setText("You: " + youPoint);
-        botTextView.setText("Bot: " + botPoint);
+        youTextView.setText(" You:   " + youPoint + " ");
+        botTextView.setText(" Com:  " + botPoint + " ");
     }
 
     //Reset all values in the game
@@ -168,6 +181,7 @@ public class threeByThreeCom extends AppCompatActivity {
         public void onClick(View view) {
             if (buttons[x][y].isEnabled()) {
                 buttons[x][y].setEnabled(false);
+                buttons[x][y].setTextColor(Color.RED);
                 buttons[x][y].setText("O");
                 c[x][y] = 0;
                 if (!checkBoard()) {
@@ -175,6 +189,7 @@ public class threeByThreeCom extends AppCompatActivity {
                 }
             }
         }
+
     }
 
     // Creating Computer game style

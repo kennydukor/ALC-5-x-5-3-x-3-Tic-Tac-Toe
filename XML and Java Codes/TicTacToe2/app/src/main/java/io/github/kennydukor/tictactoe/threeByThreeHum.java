@@ -1,8 +1,9 @@
 package io.github.kennydukor.tictactoe;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -43,15 +44,16 @@ public class threeByThreeHum extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(threeByThreeHum.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
     }
 
     //Set up board game (Linking to all buttons)
-    private void setBoard(){
-        for (int i = 0; i < 3; i++){
-            for (int j = 0; j < 3; j++){
+    private void setBoard() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 String buttonID = "button_" + i + j;
                 int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                 buttons[i][j] = findViewById(resID);
@@ -68,47 +70,56 @@ public class threeByThreeHum extends AppCompatActivity implements View.OnClickLi
         }
         if (PL_1_turn) {
             ((Button) view).setText("X");
-        }
-        else {
+        } else {
+            ((Button) view).setTextColor(Color.RED);
             ((Button) view).setText("O");
+
         }
 
         roundCounter++;
 
         if (checkWinner()) {
-            if (PL_1_turn){
+            if (PL_1_turn) {
+//                ((Button) view).setText("X");
                 PL_1Wins();
-            }
-            else {
+                for(int i = 0; i < 3; i++){
+                    for(int j = 0; j <3; j++){
+                        buttons[i][j].setTextColor(Color.WHITE);
+                    }
+                }
+            } else {
                 PL_2Wins();
+                for(int i = 0; i < 3; i++){
+                    for(int j = 0; j <3; j++){
+                        buttons[i][j].setTextColor(Color.WHITE);
+                    }
+                }
             }
-        }
-        else if (roundCounter == 9) {
+        } else if (roundCounter == 9) {
             draw();
-        }
-        else {
+        } else {
             PL_1_turn = !PL_1_turn;
         }
 
     }
 
     //Check for winner
-    private boolean checkWinner(){
+    private boolean checkWinner() {
         String[][] field = new String[3][3];
 
-        for (int i = 0; i < 3; i++){
-            for (int j = 0; j < 3; j++){
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 field[i][j] = buttons[i][j].getText().toString();
             }
         }
-        for (int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++) {
             if (field[i][0].equals(field[i][1])
                     && field[i][0].equals(field[i][2])
                     && !field[i][0].equals("")) {
-                return  true;
+                return true;
             }
         }
-        for (int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++) {
             if (field[0][i].equals(field[1][i])
                     && field[0][i].equals(field[2][i])
                     && !field[0][i].equals("")) {
@@ -153,8 +164,8 @@ public class threeByThreeHum extends AppCompatActivity implements View.OnClickLi
     }
 
     // Update score board
-    private void updatePointsText(){
-        PL_1TextView.setText("Player 1 (X) " + PL_1Point);
+    private void updatePointsText() {
+        PL_1TextView.setText("Player 1 (X): " + PL_1Point);
         PL_2TextView.setText("Player 2 (O): " + PL_2Point);
     }
 
@@ -166,10 +177,18 @@ public class threeByThreeHum extends AppCompatActivity implements View.OnClickLi
         resetBoard();
     }
 
+    private void delay() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
     // clear X and O values on the board
-    private void resetBoard(){
-        for(int i=0; i<=2; i++){
-            for(int j=0; j<=2; j++){
+    private void resetBoard() {
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j <= 2; j++) {
                 buttons[i][j].setText("");
             }
         }

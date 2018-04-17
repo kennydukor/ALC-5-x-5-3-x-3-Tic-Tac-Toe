@@ -11,16 +11,18 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="4dp">
 
         <TextView
             android:id="@+id/text_view_3x3_you"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20sp"
-            android:background="#72B640"
+            android:background="@drawable/buttons1"
             android:padding="5dp"
-            android:text="You: 0"
+            android:text=" You:   0 "
             android:textColor="@android:color/white"
             android:textSize="20sp" />
 
@@ -31,9 +33,9 @@
             android:layout_below="@+id/text_view_3x3_you"
             android:layout_marginLeft="20sp"
             android:layout_marginTop="5dp"
-            android:background="#72B640"
+            android:background="@drawable/buttons1"
             android:padding="5dp"
-            android:text="Bot: 0"
+            android:text=" Com:  0 "
             android:textColor="@android:color/white"
             android:textSize="20sp" />
 
@@ -45,7 +47,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="20sp"
-            android:background="#72B640"
+            android:background="@drawable/buttons1"
             android:text="RESET" />
     </RelativeLayout>
 
@@ -60,6 +62,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textColor="@android:color/white"
+            android:background="@drawable/buttons3"
             android:textSize="60sp" />
 
         <Button
@@ -68,6 +71,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textColor="@android:color/white"
+            android:background="@drawable/buttons3"
             android:textSize="60sp" />
 
         <Button
@@ -76,6 +80,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textColor="@android:color/white"
+            android:background="@drawable/buttons3"
             android:textSize="60sp" />
 
     </LinearLayout>
@@ -91,6 +96,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textColor="@android:color/white"
+            android:background="@drawable/buttons3"
             android:textSize="60sp" />
 
         <Button
@@ -99,6 +105,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textColor="@android:color/white"
+            android:background="@drawable/buttons3"
             android:textSize="60sp" />
 
         <Button
@@ -107,6 +114,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textColor="@android:color/white"
+            android:background="@drawable/buttons3"
             android:textSize="60sp" />
 
 
@@ -123,6 +131,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textColor="@android:color/white"
+            android:background="@drawable/buttons3"
             android:textSize="60sp" />
 
         <Button
@@ -131,6 +140,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textColor="@android:color/white"
+            android:background="@drawable/buttons3"
             android:textSize="60sp" />
 
         <Button
@@ -139,6 +149,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textColor="@android:color/white"
+            android:background="@drawable/buttons3"
             android:textSize="60sp" />
 
     </LinearLayout>
@@ -148,7 +159,7 @@
         style="?metaButtonBarButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#C29191"
+        android:background="@drawable/buttons2"
         android:text="quit" />
 
 

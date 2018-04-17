@@ -37,6 +37,7 @@ public class fiveByFiveCom extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(fiveByFiveCom.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
@@ -174,8 +175,8 @@ public class fiveByFiveCom extends AppCompatActivity {
 
     //Update the points on the scoreboard
     private void updatePointsText(){
-        youTextView.setText("You: " + youPoint);
-        botTextView.setText("Com: " + botPoint);
+        youTextView.setText(" You:   " + youPoint + " ");
+        botTextView.setText(" Com:  " + botPoint + " ");
     }
 
     //Reset all values in the game
