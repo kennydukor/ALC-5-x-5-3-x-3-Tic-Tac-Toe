@@ -26,7 +26,7 @@
         android:layout_margin="30dp"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:paddingTop="210dp">
+        android:paddingTop="225dp">
 
 
         <Button
@@ -35,7 +35,7 @@
             android:layout_weight="1"
             android:id="@+id/playX5"
             android:text="X"
-            android:textSize="50sp"
+            android:textSize="40sp"
             android:layout_margin="10dp"
             android:background="@drawable/round_button"/>
 
@@ -45,7 +45,7 @@
             android:layout_weight="1"
             android:id="@+id/playO5"
             android:text="O"
-            android:textSize="50sp"
+            android:textSize="40sp"
             android:layout_margin="10dp"
             android:background="@drawable/round_button"/>
 

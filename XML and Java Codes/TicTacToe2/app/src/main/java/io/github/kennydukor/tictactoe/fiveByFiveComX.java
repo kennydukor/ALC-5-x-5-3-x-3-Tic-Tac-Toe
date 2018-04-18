@@ -1,6 +1,7 @@
 package io.github.kennydukor.tictactoe;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -94,6 +95,7 @@ public class fiveByFiveComX extends AppCompatActivity {
                 buttons[i][j].setOnClickListener(new fiveByFiveComX.MyClickListener(i, j));
                 if (!buttons[i][j].isEnabled()) {
                     buttons[i][j].setText(" ");
+                    //buttons[i][j].setTextColor(Color.WHITE);
                     buttons[i][j].setEnabled(true);
                 }
             }
@@ -200,6 +202,7 @@ public class fiveByFiveComX extends AppCompatActivity {
         public void onClick(View view) {
             if (buttons[x][y].isEnabled()) {
                 buttons[x][y].setEnabled(false);
+                buttons[x][y].setTextColor(Color.BLUE);
                 buttons[x][y].setText("X");
                 c[x][y] = 0;
 
@@ -288,6 +291,7 @@ public class fiveByFiveComX extends AppCompatActivity {
 
         private void markSquare(int x, int y) {
             buttons[x][y].setEnabled(false);
+            buttons[x][y].setTextColor(Color.BLUE);
             buttons[x][y].setText("O");
             c[x][y] = 1;
             checkBoard();

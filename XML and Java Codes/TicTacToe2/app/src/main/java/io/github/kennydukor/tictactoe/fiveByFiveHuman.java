@@ -19,6 +19,7 @@ public class fiveByFiveHuman extends AppCompatActivity implements View.OnClickLi
     private TextView PL_2View;
     private Button quit;
     private Button buttonReset;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +35,7 @@ public class fiveByFiveHuman extends AppCompatActivity implements View.OnClickLi
 
     }
 
-    private void resetG(){
+    private void resetG() {
         // adding listener to the buttons to activityTwo and activityThree class
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +45,7 @@ public class fiveByFiveHuman extends AppCompatActivity implements View.OnClickLi
         });
     }
 
-    private void quit(){
+    private void quit() {
         quit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,9 +56,9 @@ public class fiveByFiveHuman extends AppCompatActivity implements View.OnClickLi
         });
     }
 
-    private void setBoard(){
-        for (int i = 0; i < 5; i++){
-            for (int j = 0; j < 5; j++){
+    private void setBoard() {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
                 String buttonID = "button_" + i + j;
                 int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                 buttons[i][j] = findViewById(resID);
@@ -73,37 +74,24 @@ public class fiveByFiveHuman extends AppCompatActivity implements View.OnClickLi
             return;
         }
         if (PL_1_turn) {
+            ((Button) view).setTextColor(Color.BLUE);
             ((Button) view).setText("X");
-        }
-        else {
-            ((Button) view).setTextColor(Color.RED);
+        } else {
+            ((Button) view).setTextColor(Color.BLUE);
             ((Button) view).setText("O");
         }
 
         roundCounter++;
 
         if (checkWinner()) {
-            if (PL_1_turn){
+            if (PL_1_turn) {
                 PL_1Wins();
-                for(int i = 0; i < 5; i++){
-                    for(int j = 0; j <5; j++){
-                        buttons[i][j].setTextColor(Color.WHITE);
-                    }
-                }
-            }
-            else {
+            } else {
                 PL_2Wins();
-                for(int i = 0; i < 5; i++){
-                    for(int j = 0; j <5; j++){
-                        buttons[i][j].setTextColor(Color.WHITE);
-                    }
-                }
             }
-        }
-        else if (roundCounter == 25) {
+        } else if (roundCounter == 25) {
             draw();
-        }
-        else {
+        } else {
             PL_1_turn = !PL_1_turn;
         }
 
@@ -180,7 +168,7 @@ public class fiveByFiveHuman extends AppCompatActivity implements View.OnClickLi
     }
 
     // Update score board
-    private void updatePointsText(){
+    private void updatePointsText() {
         PL_1View.setText("Player 1 (X): " + PL_1Point);
         PL_2View.setText("Player 2 (O): " + PL_2Point);
     }
@@ -194,35 +182,37 @@ public class fiveByFiveHuman extends AppCompatActivity implements View.OnClickLi
     }
 
     // clear X and O values on the board
-    private void resetBoard(){
-        for(int i=0; i<=4; i++){
-            for(int j=0; j<=4; j++){
+    private void resetBoard() {
+        for (int i = 0; i <= 4; i++) {
+            for (int j = 0; j <= 4; j++) {
                 buttons[i][j].setText("");
+                //buttons[i][j].setTextColor(Color.WHITE);
             }
         }
 
         roundCounter = 0;
         PL_1_turn = true;
     }
+}
 
 
     // Maintain design in landscape mode
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        outState.putInt("roundCounter", roundCounter);
-        outState.putInt("PL_1Point", PL_1Point);
-        outState.putInt("PL_2Point", PL_2Point);
-        outState.putBoolean("PL_1_turn", PL_1_turn);
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        roundCounter = savedInstanceState.getInt("roundCounter");
-        PL_1Point = savedInstanceState.getInt("PL_1Point");
-        PL_2Point = savedInstanceState.getInt("PL_2Point");
-        PL_1_turn = savedInstanceState.getBoolean("PL_1_turn");
-    }
-}
+//    @Override
+//    protected void onSaveInstanceState(Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//
+//        outState.putInt("roundCounter", roundCounter);
+//        outState.putInt("PL_1Point", PL_1Point);
+//        outState.putInt("PL_2Point", PL_2Point);
+//        outState.putBoolean("PL_1_turn", PL_1_turn);
+//    }
+//
+//    @Override
+//    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+//        super.onRestoreInstanceState(savedInstanceState);
+//        roundCounter = savedInstanceState.getInt("roundCounter");
+//        PL_1Point = savedInstanceState.getInt("PL_1Point");
+//        PL_2Point = savedInstanceState.getInt("PL_2Point");
+//        PL_1_turn = savedInstanceState.getBoolean("PL_1_turn");
+//    }
+//}

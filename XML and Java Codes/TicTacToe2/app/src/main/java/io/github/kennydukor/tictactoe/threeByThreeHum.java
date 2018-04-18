@@ -69,9 +69,10 @@ public class threeByThreeHum extends AppCompatActivity implements View.OnClickLi
             return;
         }
         if (PL_1_turn) {
+            ((Button) view).setTextColor(Color.BLUE);
             ((Button) view).setText("X");
         } else {
-            ((Button) view).setTextColor(Color.RED);
+            ((Button) view).setTextColor(Color.BLUE);
             ((Button) view).setText("O");
 
         }
@@ -82,18 +83,8 @@ public class threeByThreeHum extends AppCompatActivity implements View.OnClickLi
             if (PL_1_turn) {
 //                ((Button) view).setText("X");
                 PL_1Wins();
-                for(int i = 0; i < 3; i++){
-                    for(int j = 0; j <3; j++){
-                        buttons[i][j].setTextColor(Color.WHITE);
-                    }
-                }
             } else {
                 PL_2Wins();
-                for(int i = 0; i < 3; i++){
-                    for(int j = 0; j <3; j++){
-                        buttons[i][j].setTextColor(Color.WHITE);
-                    }
-                }
             }
         } else if (roundCounter == 9) {
             draw();
@@ -189,6 +180,7 @@ public class threeByThreeHum extends AppCompatActivity implements View.OnClickLi
     private void resetBoard() {
         for (int i = 0; i <= 2; i++) {
             for (int j = 0; j <= 2; j++) {
+                //buttons[i][j].setTextColor(Color.WHITE);
                 buttons[i][j].setText("");
             }
         }

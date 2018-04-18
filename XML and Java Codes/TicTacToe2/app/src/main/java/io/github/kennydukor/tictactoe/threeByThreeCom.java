@@ -51,7 +51,6 @@ public class threeByThreeCom extends AppCompatActivity {
                 resetGame();
             }
         });
-
         setBoard();
     }
 
@@ -81,6 +80,7 @@ public class threeByThreeCom extends AppCompatActivity {
                 buttons[i][j].setOnClickListener(new MyClickListener(i, j));
                 if (!buttons[i][j].isEnabled()) {
                     buttons[i][j].setText(" ");
+                    //buttons[i][j].setTextColor(Color.WHITE);
                     buttons[i][j].setEnabled(true);
                 }
             }
@@ -95,22 +95,14 @@ public class threeByThreeCom extends AppCompatActivity {
                 || (c[1][1] == 0 && c[1][2] == 0 && c[1][3] == 0) || (c[2][1] == 0 && c[2][2] == 0 && c[2][3] == 0)
                 || (c[3][1] == 0 && c[3][2] == 0 && c[3][3] == 0) || (c[1][1] == 0 && c[2][1] == 0 && c[3][1] == 0)) {
             youWin();
-//            for(int i = 1; i < 3; i++){
-//                for(int j = 1; j < 3; j++){
-//                    buttons[i][j].setTextColor(Color.WHITE);
-//                }
-//            }
+
             gameOver = true;
         } else if ((c[1][1] == 1 && c[2][2] == 1 && c[3][3] == 1) || (c[1][3] == 1 && c[2][2] == 1 && c[3][1] == 1) || (c[1][2] == 1 && c[2][2] == 1 && c[3][2] == 1)
                 || (c[1][3] == 1 && c[2][3] == 1 && c[3][3] == 1) || (c[1][1] == 1 && c[1][2] == 1 && c[1][3] == 1) || (c[2][1] == 1 && c[2][2] == 1 && c[2][3] == 1)
                 || (c[3][1] == 1 && c[3][2] == 1 && c[3][3] == 1)
                 || (c[1][1] == 1 && c[2][1] == 1 && c[3][1] == 1)) {
             botWin();
-//            for(int i = 1; i < 3; i++){
-//                for(int j = 1; j < 3; j++){
-//                    buttons[i][j].setTextColor(Color.WHITE);
-//                }
-//            }
+
             gameOver = true;
         } else {
             boolean empty = false;
@@ -181,7 +173,7 @@ public class threeByThreeCom extends AppCompatActivity {
         public void onClick(View view) {
             if (buttons[x][y].isEnabled()) {
                 buttons[x][y].setEnabled(false);
-                buttons[x][y].setTextColor(Color.RED);
+                buttons[x][y].setTextColor(Color.BLUE);
                 buttons[x][y].setText("O");
                 c[x][y] = 0;
                 if (!checkBoard()) {
@@ -228,6 +220,7 @@ public class threeByThreeCom extends AppCompatActivity {
 
         private void markSquare(int x, int y) {
             buttons[x][y].setEnabled(false);
+            buttons[x][y].setTextColor(Color.BLUE);
             buttons[x][y].setText("X");
             c[x][y] = 1;
             checkBoard();
