@@ -1,5 +1,6 @@
 # ALC-5-x-5-3-x-3-Tic-Tac-Toe
 This repository presents my final project (Tic Tac Toe) for certification by Andela
+The app is at l suspected to crash on some phones but will perfectly on 2gb ram phones with android 7.0
 1. [Link to MockUp png on GitHub](https://github.com/kennydukor/ALC-5-x-5-3-x-3-Tic-Tac-Toe/tree/master/MockUps) 
 
    [Link to MockUp on Figma.com](https://www.figma.com/file/gTAe0LB7nH3cdUX8Ghlwf7H2/Untitled)
